@@ -21,11 +21,11 @@
         <activity
             android:name="martin.quirky.ie.myapplication.DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
-            android:parentActivityName="martin.quirky.ie.myapplication.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light">
+            android:parentActivityName="martin.quirky.ie.myapplication.MainActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="martin.quirky.ie.myapplication.MainActivity" />
+                android:value="com.example.myapplication.MainActivity" />
         </activity>
     </application>
 
