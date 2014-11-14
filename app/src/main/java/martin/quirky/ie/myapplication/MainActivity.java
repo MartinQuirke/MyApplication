@@ -1,6 +1,7 @@
 package martin.quirky.ie.myapplication;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -11,7 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class MainActivity extends ActionBarActivity{
+public class MainActivity extends ActionBarActivity {
 
     public final static String EXTRA_MESSAGE = "martin.quirky.ie.MESSAGE";
 
