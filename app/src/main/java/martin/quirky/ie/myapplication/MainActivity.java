@@ -1,8 +1,9 @@
 package martin.quirky.ie.myapplication;
 
 
-import android.app.Activity;
+import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -10,16 +11,32 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
 
     public final static String EXTRA_MESSAGE = "martin.quirky.ie.MESSAGE";
+    TextView mTextView; // Member variable for text view in the layout
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Set the user interface layout for this Activity
+        // The layout file is defined in the project res/layout/main_activity.xml file
         setContentView(R.layout.activity_main);
+
+        // Initialize member TextView so we can manipulate it later
+        mTextView = (TextView) findViewById(R.id.edit_message);
+
+        // Make sure we're running on Honeycomb or higher to use ActionBar APIs
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            // For the main activity, make sure the app icon in the action bar
+            // does not behave as a button
+            ActionBar actionBar = getActionBar();
+            actionBar.setHomeButtonEnabled(false);
+        }
     }
 
     @Override
